@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://precious-sprite-31423b.netlify.app/sitemap.xml

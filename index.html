@@ -1,0 +1,853 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="汪佩宗">
+    <meta name="description" content="汪佩宗个人作品集 - AIGC跨界制作人、导演、沉浸式项目策划。专注VR/MR沉浸体验、AIGC视频、数字艺术、展览策划与文旅融合项目。">
+    <meta name="keywords" content="汪佩宗,AIGC,跨界制作人,导演,沉浸式体验,VR,MR,数字艺术,展览策划,文旅融合,个人作品集,项目策划">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0e17">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="汪佩宗 | AIGC跨界制作人 · 导演 · 沉浸式项目策划">
+    <meta property="og:description" content="以AIGC赋能创意破局，用跨界思维落地创造。VR/MR沉浸、AIGC视频、数字艺术、展览策划、文旅融合。">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="汪佩宗个人作品集">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="汪佩宗 | AIGC跨界制作人 · 导演 · 沉浸式项目策划">
+    <meta name="twitter:description" content="以AIGC赋能创意破局，用跨界思维落地创造。VR/MR沉浸、AIGC视频、数字艺术、展览策划、文旅融合。">
+
+    <title>汪佩宗 | AIGC 跨界制作人 / 导演 / 沉浸式项目策划</title>
+    <!-- Google Fonts removed -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">WPZ</div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">正在加载体验...</div>
+        </div>
+    </div>
+
+    <!-- Canvas Background -->
+    <canvas id="particleCanvas" class="particle-bg"></canvas>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-brand">
+            <span class="nav-logo">WPZ</span>
+            <span class="nav-name">汪佩宗</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active">首页</a></li>
+            <li><a href="#about" class="nav-link">关于</a></li>
+            <li><a href="#experience" class="nav-link">经历</a></li>
+            <li><a href="#projects" class="nav-link">作品</a></li>
+            <li><a href="#contact" class="nav-link">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-label" data-animate="fade-up">
+                <span class="label-line"></span>
+                <span class="label-text">PERSONAL PORTFOLIO</span>
+            </div>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="0.1">
+                <span class="title-main">汪佩宗</span>
+                <span class="title-sub">WANG PEIZONG</span>
+            </h1>
+            <p class="hero-role" data-animate="fade-up" data-delay="0.2">
+                <span class="role-text">AIGC 跨界制作人</span>
+                <span class="role-divider">・</span>
+                <span class="role-text">导演</span>
+                <span class="role-divider">・</span>
+                <span class="role-text">沉浸式项目策划</span>
+            </p>
+            <p class="hero-desc" data-animate="fade-up" data-delay="0.3">
+                以 AIGC 赋能创意破局，用跨界思维落地创造<br>
+                VR/MR 沉浸、AIGC视频、数字艺术、展览策划、文旅融合
+            </p>
+            <div class="hero-actions hero-actions-desktop" data-animate="fade-up" data-delay="0.4">
+                <a href="#projects" class="btn btn-primary">
+                    <span>查看作品</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">联系我</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL</span>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item" data-animate="fade-up" data-delay="0.5">
+                <span class="stat-num">10+</span>
+                <span class="stat-label">年从业经验</span>
+            </div>
+            <div class="stat-item" data-animate="fade-up" data-delay="0.6">
+                <span class="stat-num">40+</span>
+                <span class="stat-label">策划方案</span>
+            </div>
+            <div class="stat-item" data-animate="fade-up" data-delay="0.7">
+                <span class="stat-num">10+</span>
+                <span class="stat-label">落地项目</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-num">01</span>
+                <h2 class="section-title">关于我</h2>
+                <p class="section-subtitle">ABOUT ME</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-info" data-animate="fade-right">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <div class="info-avatar">
+                                <span>WPZ</span>
+                            </div>
+                            <div class="info-basic">
+                                <h3>汪佩宗</h3>
+                                <p>AIGC 跨界制作人 / 导演 / 沉浸式项目策划</p>
+                            </div>
+                        </div>
+                        <div class="info-details">
+                            <div class="info-item">
+                                <span class="info-label">出生年月</span>
+                                <span class="info-value">1992年12月</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">政治面貌</span>
+                                <span class="info-value">中共党员</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">学历</span>
+                                <span class="info-value">本科</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">民族</span>
+                                <span class="info-value">满族</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">毕业院校</span>
+                                <span class="info-value">天津师范大学 / 环境艺术设计</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">其他经历</span>
+                                <span class="info-value">国家文物局研修班优秀学员 / 唐山文旅集团创研院研究员</span>
+                            </div>
+                        </div>
+                        <div class="info-tags">
+                            <span class="tag">设计</span>
+                            <span class="tag">绘画</span>
+                            <span class="tag">播音主持</span>
+                            <span class="tag">摄影</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-advantages" data-animate="fade-left">
+                    <h3 class="advantages-title">个人优势</h3>
+                    <div class="advantage-list">
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                                </svg>
+                            </div>
+                            <div class="advantage-content">
+                                <h4>跨界项目创制经验</h4>
+                                <p>AIGC 视频 / 互动影游 / XR / 艺术装置 / 沉浸演艺 / 文旅夜游 / 景区概规多品类实战</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </div>
+                            <div class="advantage-content">
+                                <h4>系统项目思维「逻辑哥」</h4>
+                                <p>甘特式管控，精通内容、人财物、周期，全能项目制作人</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M15 10l5 5-5 5"/>
+                                    <path d="M4 4v7a4 4 0 004 4h12"/>
+                                </svg>
+                            </div>
+                            <div class="advantage-content">
+                                <h4>导演式全局思维</h4>
+                                <p>导演出身，主导内容创制，把控项目整体叙事</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="3"/>
+                                    <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                                </svg>
+                            </div>
+                            <div class="advantage-content">
+                                <h4>艺术审美能力</h4>
+                                <p>设计专业 + 艺术展背景，把控美学调性、设计规范</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="22"/>
+                                </svg>
+                            </div>
+                            <div class="advantage-content">
+                                <h4>高效述案沟通</h4>
+                                <p>真诚有逻辑，擅长方案汇报、商务表达</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="advantage-content">
+                                <h4>共情统筹管理</h4>
+                                <p>诉求快速落地，柔性且有原则，管理项目与团队</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-num">02</span>
+                <h2 class="section-title">工作经历</h2>
+                <p class="section-subtitle">EXPERIENCE</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-animate="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>北京千景互动科技有限公司</h3>
+                            <span class="timeline-role">AIGC 跨界制作人 / 导演 / 沉浸式项目策划</span>
+                            <span class="timeline-date">2025.11 - 至今</span>
+                        </div>
+                        <div class="timeline-body">
+                            <p>担任XR业务线创制总负责人，全面负责项目创制全链条管理及团队管理工作。主导文旅融合、VR大空间、AR、XR、AIGC内容、沉浸式演艺等创新业态项目的全流程制作与导演工作，以导演视角统筹项目从前期策划、内容创制到落地执行的全周期闭环。在XR数字内容、虚实融合体验、AI生成艺术等前沿领域持续探索，推动技术与艺术的深度融合，打造具有行业标杆意义的沉浸式体验产品。</p>
+                            <div class="timeline-tags">
+                                <span class="tag">XR业务线负责人</span>
+                                <span class="tag">VR大空间</span>
+                                <span class="tag">AIGC内容</span>
+                                <span class="tag">沉浸式演艺</span>
+                                <span class="tag">导演</span>
+                                <span class="tag">团队管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-animate="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>君看众妙（天津）文化传媒有限公司</h3>
+                            <span class="timeline-role">项目经理 / 主管</span>
+                            <span class="timeline-date">2020.03 - 2025.10</span>
+                        </div>
+                        <div class="timeline-body">
+                            <p>全盘负责项目的策研创工作，包括调研与策划、项目管理、客户管理等。在职期间帮助公司完成策划方案40余个，参与深度策划及创制项目10余个；连续3年被评为公司优秀员工/个人称号。</p>
+                            <div class="timeline-tags">
+                                <span class="tag">文旅项目</span>
+                                <span class="tag">展览策划</span>
+                                <span class="tag">大型活动</span>
+                                <span class="tag">品牌策划</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-animate="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>北京乐都展陈科技有限公司</h3>
+                            <span class="timeline-role">项目经理 / 主管</span>
+                            <span class="timeline-date">2019.03 - 2020.03</span>
+                        </div>
+                        <div class="timeline-body">
+                            <p>负责项目策划与设计、项目管理（人财物时间）、项目汇报、执行与复盘等工作。协管设计及项目部，对接技术部完成年度KPI。</p>
+                            <div class="timeline-tags">
+                                <span class="tag">展览设计</span>
+                                <span class="tag">空间策划</span>
+                                <span class="tag">项目管理</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-animate="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>繁星当代艺术中心</h3>
+                            <span class="timeline-role">展览策划与设计</span>
+                            <span class="timeline-date">2018.03 - 2019.03</span>
+                        </div>
+                        <div class="timeline-body">
+                            <p>负责展览策划与执行、展览相关设计、文案撰写、艺术家沟通与创作、展览解说与宣传等从展览策划到开展及后续运营活动全部工作。"对戏国际当代艺术展"获得北京文化艺术基金。</p>
+                            <div class="timeline-tags">
+                                <span class="tag">当代艺术</span>
+                                <span class="tag">展览策划</span>
+                                <span class="tag">艺术创作</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-num">03</span>
+                <h2 class="section-title">项目作品</h2>
+                <p class="section-subtitle">PROJECTS</p>
+            </div>
+            
+            <div class="project-tabs" data-animate="fade-up">
+                <button class="tab-btn active" data-tab="aigc">AIGC类</button>
+                <button class="tab-btn" data-tab="vr">VR类</button>
+                <button class="tab-btn" data-tab="culture">文旅类</button>
+                <button class="tab-btn" data-tab="exhibition">展览类</button>
+                <button class="tab-btn" data-tab="event">活动类</button>
+                <button class="tab-btn" data-tab="design">设计类</button>
+            </div>
+
+            <div class="project-content">
+                                <!-- AIGC类 -->
+                <div class="tab-panel active" id="aigc">
+                    <div class="project-grid">
+                        <a href="projects/qijingguo.html" class="project-card-link">
+                            <div class="project-card featured" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #be185d 0%, #f472b6 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">AIGC</span>
+                                    <h3>AIGC视频《绮境国》系列短片</h3>
+                                    <p>运用AIGC技术创制系列视觉短片，融合东方美学与数字艺术，探索人工智能在文旅内容创作中的创新应用与表达。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">总策划 / 导演</span>
+                                        <span class="project-year">2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- VR类 -->
+                <div class="tab-panel" id="vr">
+                    <div class="project-grid">
+                        <a href="projects/guchengxingyu.html" class="project-card-link">
+                            <div class="project-card featured" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #1e3a5f 0%, #6366f1 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">VR大空间</span>
+                                    <h3>《古城星语》VR大空间沉浸体验项目</h3>
+                                    <p>以古城文化为内核，结合VR大空间技术，打造跨越时空的沉浸式文旅体验。担任项目制作人及导演，统筹内容创制与技术落地。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">制作人 / 导演</span>
+                                        <span class="project-year">2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="projects/shenhaiqiyu.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #0066cc 0%, #00ccff 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">VR大空间</span>
+                                    <h3>《深海奇遇》海洋主题VR大空间沉浸体验展</h3>
+                                    <p>全国首个中国传统文化海洋主题的VR大空间体验产品，以《海错图》为内容基底，结合HTC Focus3设备及LBE大空间技术，带领观众领略海底奇幻世界。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">项目经理 / 策划</span>
+                                        <span class="project-year">2024</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 文旅类 -->
+                <div class="tab-panel" id="culture">
+                    <div class="project-grid">
+                        <a href="projects/huanjing2099.html" class="project-card-link">
+                            <div class="project-card featured" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #7c3aed 0%, #c084fc 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">沉浸式演艺</span>
+                                    <h3>大理华侨城《幻境2099》3.0</h3>
+                                    <p>派对式戏剧项目，深植大理自由、生动、包容的文化精神，通过科技发展与精神困境主题，打造前所未有的戏剧乌托邦。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">策划 / 制作经理</span>
+                                        <span class="project-year">2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="projects/guojiabaozang.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #dc2626 0%, #f87171 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">IP体验馆</span>
+                                    <h3>济南华侨城《国家宝藏》数幻体验馆</h3>
+                                    <p>将央视《国家宝藏》IP进行线下落地，以沉浸式体验文娱方式创制，补给城市受众新的文化产品。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">策划 / 制作经理</span>
+                                        <span class="project-year">2020-2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+<!-- 展览类 -->
+                <div class="tab-panel" id="exhibition">
+                    <div class="project-grid">
+                        <a href="projects/guojiahuaju.html" class="project-card-link">
+                            <div class="project-card featured" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #be123c 0%, #fb7185 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">国家级</span>
+                                    <h3>中国国家话剧院创建80周年组建20周年院庆展</h3>
+                                    <p>以"你永远可以相信"为主题，融合100余部国话剧本，在百年文物建筑中融合新媒介及视频等创意形态，获得习主席回信及国家级认可。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">展览策划 / 项目经理</span>
+                                        <span class="project-year">2021-2022</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="projects/davidbowie.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #4338ca 0%, #818cf8 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">摇滚文化</span>
+                                    <h3>北京798 "David Bowie中国巡展"</h3>
+                                    <p>西雅图流行文化博物馆及摩登天空主办的摇滚明星David Bowie中国区个展，以互动多媒体的当代展览形式凸显个人文化效应。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">展览策划 / 数字项目经理</span>
+                                        <span class="project-year">2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="projects/duixi.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #a21caf 0%, #e879f9 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">当代艺术</span>
+                                    <h3>2018-2019 "对戏国际当代艺术展"</h3>
+                                    <p>北京市文化艺术基金赞助项目，展示23位艺术家近80件作品。本人作品《戏精系列》也参加展览。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">策划 / 展览设计 / 参展人</span>
+                                        <span class="project-year">2018-2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 活动类 -->
+                <div class="tab-panel" id="event">
+                    <div class="project-grid">
+                        <a href="projects/qixiwanhui.html" class="project-card-link">
+                            <div class="project-card featured" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #b91c1c 0%, #f87171 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">央视晚会</span>
+                                    <h3>央视CCTV-1 "如期而遇，漫歌今夕" 2023七夕晚会</h3>
+                                    <p>担任策划、导演及总统筹，提出"音乐节+晚会+纪录片"多维跨界方案。全网热榜124个，话题总阅读量17亿，在四大平台热搜榜登顶。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">策划 / 导演 / 总统筹</span>
+                                        <span class="project-year">2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="projects/sichouzhilu.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">国家级电影节</span>
+                                    <h3>第九届丝绸之路国际电影节开幕式/颁奖盛典</h3>
+                                    <p>国家级电影活动，负责开幕式及颁奖盛典全程策划与执行期总统筹工作，在央视播出并获得新闻联播报道。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">策划 / 总统筹</span>
+                                        <span class="project-year">2022-2023</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 设计类 -->
+                <div class="tab-panel" id="design">
+                    <div class="project-grid">
+                        <a href="projects/harmay.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #1e40af 0%, #60a5fa 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">品牌设计</span>
+                                    <h3>北京HARMAY话梅 "BEYOND BEAUTY" 展览</h3>
+                                    <p>主视觉设计，打造时尚美学视觉体验。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">视觉设计</span>
+                                        <span class="project-year">2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="projects/yushenduihua.html" class="project-card-link">
+                            <div class="project-card" data-animate="fade-up">
+                                <div class="project-card-bg" style="background: linear-gradient(135deg, #7c2d12 0%, #c2410c 100%);"></div>
+                                <div class="project-card-content">
+                                    <span class="project-badge">戏剧视觉</span>
+                                    <h3>实验性戏剧《与神对话》</h3>
+                                    <p>主视觉设计，以艺术化视觉语言传达戏剧内涵。</p>
+                                    <div class="project-meta">
+                                        <span class="project-role">主视觉设计</span>
+                                        <span class="project-year">2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-num">04</span>
+                <h2 class="section-title">专业技能</h2>
+                <p class="section-subtitle">SKILLS</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-animate="fade-up">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 9h18M9 21V9"/>
+                            </svg>
+                        </div>
+                        <h3>设计软件</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Photoshop</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 95%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Illustrator</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SketchUp</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-animate="fade-up">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8Z"/>
+                                <path d="M12 6v6l4 2"/>
+                                <circle cx="12" cy="12" r="1"/>
+                                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                            </svg>
+                        </div>
+                        <h3>AI工具</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <span class="skill-name">Agent / 大模型应用</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 90%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">即梦 / 可灵 / 可灵AI</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 88%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AIGC文图视听全流程</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 92%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Midjourney / Stable Diffusion</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Runway / Pika / Sora</span>
+                            <div class="skill-bar"><div class="skill-fill" style="width: 82%"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-animate="fade-up">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3>管理能力</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">目标导向</span>
+                        <span class="skill-tag">全盘体系化</span>
+                        <span class="skill-tag">团队管理</span>
+                        <span class="skill-tag">成本控制</span>
+                        <span class="skill-tag">流程优化</span>
+                        <span class="skill-tag">质量把控</span>
+                    </div>
+                </div>
+
+                <div class="skill-category" data-animate="fade-up">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h3>沟通能力</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">普通话一级乙等</span>
+                        <span class="skill-tag">客户对接</span>
+                        <span class="skill-tag">述案能力</span>
+                        <span class="skill-tag">跨部门协调</span>
+                        <span class="skill-tag">逻辑表达</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-num">05</span>
+                <h2 class="section-title">教育与荣誉</h2>
+                <p class="section-subtitle">EDUCATION & HONORS</p>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-main" data-animate="fade-right">
+                    <div class="edu-card">
+                        <div class="edu-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                            </svg>
+                        </div>
+                        <div class="edu-content">
+                            <h3>天津师范大学</h3>
+                            <p class="edu-degree">本科 · 环境艺术设计</p>
+                            <p class="edu-year">2013 - 2017</p>
+                            <div class="edu-roles">
+                                <span class="edu-role">学生会主席</span>
+                                <span class="edu-role">校园播音员</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edu-honors" data-animate="fade-left">
+                    <h3 class="honors-title">获奖情况</h3>
+                    <div class="honor-list">
+                        <div class="honor-item">
+                            <span class="honor-badge">奖学金</span>
+                            <div class="honor-content">
+                                <h4>国家奖学金</h4>
+                                <p>2016年</p>
+                            </div>
+                        </div>
+                        <div class="honor-item">
+                            <span class="honor-badge">奖学金</span>
+                            <div class="honor-content">
+                                <h4>国家励志奖学金</h4>
+                                <p>2015年</p>
+                            </div>
+                        </div>
+                        <div class="honor-item">
+                            <span class="honor-badge">奖学金</span>
+                            <div class="honor-content">
+                                <h4>天津市人民政府奖学金</h4>
+                                <p>2014年</p>
+                            </div>
+                        </div>
+                        <div class="honor-item">
+                            <span class="honor-badge">专业</span>
+                            <div class="honor-content">
+                                <h4>第十届全国数字艺术设计大赛银奖</h4>
+                                <p>作品入选《2016中国当代大学生艺术作品年鉴》</p>
+                            </div>
+                        </div>
+                        <div class="honor-item">
+                            <span class="honor-badge">荣誉</span>
+                            <div class="honor-content">
+                                <h4>天津市西青区"德润精武道德模范"</h4>
+                                <p>2015年</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-left" data-animate="fade-right">
+                    <span class="section-num">06</span>
+                    <h2 class="section-title">联系我</h2>
+                    <p class="section-subtitle">CONTACT</p>
+                    <p class="contact-desc">
+                        如果您有项目合作意向或想了解更多信息，<br>
+                        欢迎随时与我联系。
+                    </p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <span>微信：w01343962857</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <span>手机：18600685715</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <span>中国 · 北京</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right" data-animate="fade-left">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <span class="contact-avatar">WPZ</span>
+                            <div>
+                                <h3>汪佩宗</h3>
+                                <p>AIGC 跨界制作人 / 导演 / 沉浸式项目策划</p>
+                            </div>
+                        </div>
+                        <div class="contact-card-body">
+                            <p>"以 AIGC 赋能创意破局，用跨界思维落地创造。期待与您共同探索 VR/MR 沉浸、AIGC视频与数字艺术的无限可能。"</p>
+                        </div>
+                        <div class="contact-card-footer">
+                            <span class="contact-status">
+                                <span class="status-dot"></span>
+                                开放合作
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">WPZ</span>
+                    <p>汪佩宗个人作品集</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#hero">首页</a>
+                    <a href="#about">关于</a>
+                    <a href="#experience">经历</a>
+                    <a href="#projects">作品</a>
+                    <a href="#contact">联系</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p> 2026 汪佩宗. All rights reserved.</p>
+                <p class="footer-tech">Built with passion & precision</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
